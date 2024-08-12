@@ -1,0 +1,390 @@
+.fixedCart {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 999;
+    animation: opacity 1s 1;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0,0.5);
+}
+@keyframes opacity {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+.headerCart {
+    position: relative;
+}
+.cartIcon {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    max-width: 35px;
+    padding: 5px;
+    max-height: 35px;
+    background-color: var(--orange, #FFCA18);
+    cursor: pointer;
+}
+.fixedCart.cartIcon {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    max-width: 75px;
+    padding: 5px;
+    max-height: 75px;
+    background-color: var(--orange, #FFCA18);
+    cursor: pointer;
+    z-index: 9999999;
+}
+.cartIcon svg {
+    width: 70%;
+    height: 100%;
+    margin-left: -5%;
+}
+.countItems {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    background-color: var(--orange, #FFCA18);
+    width: 10px;
+    color: #000;
+    height: 10px;
+    padding: 2px;
+    border-radius: 50%;
+    position: absolute;
+    right: -20%;
+    top: -8%;
+}
+.fixedCart .countItems {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    background-color: var(--orange, #FFCA18);
+    width: 19px;
+    height: 19px;
+    padding: 2px;
+    border-radius: 50%;
+    position: absolute;
+    right: -20%;
+    top: -8%;
+}
+
+/* На странице корзины */
+.mainCartBlock {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.cartProduct {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.20);
+    background-color: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.mainLeftBlock {
+    width: 75%;
+}
+.mainRightBlock {
+    margin-left: 5%;
+    width: 20%;
+}
+.cartProduct:first-child {
+    margin-top: 20px;
+}
+.cartProduct:not(:first-child) {
+
+}
+.cartProduct:last-child {
+    margin-bottom: 80px;
+}
+.cartProduct .selectedRow {
+    position: relative;
+    display: flex;
+}
+.cartProduct .iconBlock {
+    position: relative;
+    display: flex;
+    width: 3vw;
+    height: 3vw;
+    max-width: 15px;
+    max-height: 15px;
+}
+.productCardQuntity {
+    position: relative;
+    height: 35%;
+    max-height: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    width: 80%;
+    border-radius: 30px;
+    margin-top: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.40);
+}
+.productCardQuntity p {
+    width: 25%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3vw;
+    height: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.cartProductColumn {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 50%;
+    margin-left: 1%;
+}
+.rowTotalSumUp {
+    display: flex;
+    align-items: center;
+    min-width: max-content;
+}
+.rowTotalSumUp:first-child p {
+    min-width: max-content;
+}
+.rowTotalSumUp:first-child h5 {
+    margin-left: 2%;
+    min-width: max-content;
+}
+.selectProductBlock:first-child {
+    margin-left: 2%;
+}
+.cartProductColumn:last-child {
+    align-items: flex-end;
+    justify-content: space-evenly;
+    width: 18%;
+    margin-right: 2%;
+}
+.cartProductColumn:not(:last-child) > h3 {
+    font-size: 1vw;
+    height: 4vw;
+    min-height: 65px;
+}
+.cartProductColumn:not(:last-child) > p {
+    margin-top: 10px;
+}
+.cartProductColumn:not(:last-child) .selectedRow {
+     margin-top: 10px;
+     display: flex;
+     align-items: center;
+     margin-bottom: 20px;
+     cursor: pointer;
+}
+.selectProductBlock {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    width: 5%;
+}
+.cartProductImage {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    margin-left: 1%;
+}
+.cartProductImage img {
+    object-fit: contain;
+}
+.productCardButton {
+    position: relative;
+    width: 10%;
+    min-height: 20%;
+    height: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all .3s;
+
+    z-index: 9999;
+}
+.totalSumBlock {
+    border-radius: 30px;
+    background: #FFF;
+    margin-top: 20px;
+    padding: 20px;
+}
+.totalSumBlock > * {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.totalSumBlock > *:first-child {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.60);
+    padding-bottom: 10px;
+}
+.totalSumBlock > *:nth-child(2) {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.totalSumBlock > *:first-child *, .totalSumBlock > *:nth-child(2) *{
+    font-size: 0.8vw;
+    color: rgba(0, 0, 0, 0.60);
+}
+.buttonOrder {
+    width: 100%;
+    border: none;
+    text-align: center;
+    font-size: 1vw;
+    font-weight: 600;
+    border-radius: 90px;
+    background: var(--orange, #FFCA18);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 30vw;
+    max-height: 56px;
+    align-items: center;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all .3s;
+}
+.buttonOrder:hover {
+    scale: 1.05;
+}
+.deleteSelected {
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 498px) {
+
+    .mainCartBlock {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .fixedCart.cartIcon {
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        border-radius: 50%;
+        width: 57px;
+        height: 57px;
+        max-width: 75px;
+        padding: 5px;
+        max-height: 75px;
+        background-color: var(--orange, #FFCA18);
+        cursor: pointer;
+        z-index: 9999999;
+    }
+    .cartIcon svg {
+        width: 66%;
+        height: 61%;
+        margin-left: -6%;
+        margin-top: 22%;
+    }
+    .cartProductColumn:not(:last-child) .selectedRow {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 28px;
+        cursor: pointer;
+    }
+    .cartProduct {
+        padding-right: 10px;
+        max-height: 160px;
+    }
+    .mainLeftBlock {
+        width: 100%;
+    }
+    .mainRightBlock {
+        margin-left: 0;
+        width: 100%;
+    }
+    .cartProductColumn:not(:last-child) > h3 {
+        font-size: 3.3vw;
+        height: 28vw;
+        min-height: 65px;
+    }
+    .cartProductColumn:last-child {
+        align-items: flex-end;
+        justify-content: space-between;
+        width: 32%;
+    }
+    .productCardQuntity {
+        position: relative;
+        height: 40px;
+        max-height: 100px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        width: 83%;
+        border-radius: 30px;
+        margin-top: -20px;
+        border: 1px solid rgba(0,0,0,.4);
+        margin-bottom: 16px;    
+    }
+    .productCardQuntity p {
+        width: 25%;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 5.3vw;
+        height: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .cartProductImage {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 15%;
+        margin-left: 1%;
+        display: none;
+    }
+    .totalSumBlock > *:first-child *, .totalSumBlock > *:nth-child(2) * {
+        font-size: 3.2vw;
+        color: rgba(0,0,0,.6);
+        display: flex;
+        align-items: center;
+    }
+    .buttonOrder {
+        font-size: 3.7vw;
+        font-weight: 600;    
+    }
+
+}
+
+@media screen and (min-width: 1500px) {
+    .buttonOrder {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-height: 380px){ 
+    .fixedCart.cartIcon {
+        display: none !important;
+    }
+}

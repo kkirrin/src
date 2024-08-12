@@ -1,0 +1,699 @@
+.productContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    border-radius: 20px;
+    margin-top: 120px;
+}
+.productContainer .upBlock {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-bottom: 60px;
+}
+.upBlock .left {
+    min-width: 70%;
+}
+.upBlock .right {
+    min-width: 28%;
+    margin-left: 2%;
+    font-size: 1vw;
+}
+.filterItem:not(:first-child) {
+    margin-top: 20px;
+}
+.upBlock h2, .upBlock strong {
+    font-size: 3vw;
+    font-weight: 800;
+}
+.upBlock h2 {
+    color: #000;
+    text-transform: uppercase;
+}
+.upBlock strong {
+    color: var(--orange, #FFCA18);
+}
+.productContainer .downBlock {
+    display: grid;
+    grid-auto-columns: clamp(250px, 16.7svw, 550px);
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    grid-template-rows: 20svw;
+    grid-auto-rows: 1fr;
+    grid-auto-flow: column;
+    column-gap: 2svw;
+    padding-bottom: 150px;
+}
+.productContainer .downBlock::-webkit-scrollbar-thumb {
+    background-color: #FFCA18;
+}
+.productContainer .downBlock.downBlock::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    background-color: #aaaaaa; /* or add it to the track */
+}
+.buttonToShop {
+    text-decoration: none;
+    padding: 20px 20px;
+    font-weight: 600;
+    width: clamp(200px, 30vw, 350px);
+    min-width: 150px;
+    max-width: 270px;
+    text-align: center;
+    border-radius: 27px;
+    background: var(--orange, #FFCA18);
+    color: #000;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    transition: all .3s;
+    font-size: clamp(18px, 1.2vw, 20px);
+}
+.buttonToShop:hover {
+    scale: 1.1;
+}
+
+/* Карточки товаров */
+.productCartLink {
+    width: 100%;
+    position: relative;
+    display: grid;
+    height: 100%;
+    text-decoration: none;
+    color: #000;
+    z-index: 0;
+    grid-auto-flow: row;
+    grid-template-columns: 100%;
+    grid-template-rows: 40% 20% 28% 8%;
+    align-items: center;
+}
+.productCard {
+    position: relative;
+    display: grid;
+    grid-template-columns: 100%;
+    align-items: center;
+    min-width: 100%;
+    max-width: 556px;
+    height: 25vw;
+    background-color: #fff;
+    padding: 8% 1%;
+    border-radius: 27px;
+    cursor: pointer;
+    transition: all .3s ease-in;
+    grid-template-rows: 37svh 5svh;
+    opacity: 1;
+    animation: opacity 1s 1;
+}
+
+.productCard .stock {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.productCard .stock .iconStock {
+    position: relative;
+    height: 100%;
+    width: 5%;
+}
+.productCard .stock p {
+    font-size: 1vw;
+    margin-left: 5%;
+}
+.productCard:hover {
+    scale: 1.03;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+.productContainer .productCard {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.productContainer .productCard {
+    margin-left: 2%;
+}
+.productCardImage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.productCardImage img {
+    object-fit: contain;
+}
+.productCartDownBlock {
+    position: relative;
+    height: 100%;
+    z-index: 999;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    justify-items: center;
+    margin: auto;
+}
+.productCardQuntity {
+    position: relative;
+    height: 100%;
+    max-height: 100px;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 100%;
+    width: 100%;
+    border-radius: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.40);
+    padding-left: 9%;
+    padding-right: 9%;
+    justify-items: center;
+    margin-left: auto;
+}
+.productCardQuntity p {
+    width: 30%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3vw;
+    height: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.productCardButton {
+    position: relative;
+    width: 100%;
+    min-height: 30%;
+    height: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all .3s;
+    z-index: 9999;
+}
+.productCardButton:hover {
+    scale: 1.1;
+}
+.productCardTitle {
+    font-size: 0.9vw;
+    margin-bottom: 20px;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 90%;
+    white-space: collapse;
+}
+.addToCartButton {
+    border-radius: 160px;
+    background: var(--orange, #FFCA18);
+    border: none;
+    font-size: 0.9vw;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 10%;
+    height: 100%;
+    max-width: 100%;
+    font-weight: 600;
+    cursor: pointer;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.filtersContainer {
+    width: 100%;
+    display: grid;
+    grid-auto-flow: row;
+    grid-auto-columns: 80%;
+    position: relative;
+    margin-top: 20px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+/* .filtersBlock nav {
+    max-height: 0;
+    opacity: 0;
+    will-change: max-height;
+    transform-origin: 0 0;
+    transition: all 0.5s ease;
+    box-sizing: border-box;
+    transform: none;
+    transform-origin: unset;
+    position: static;
+    padding-left: 20px;
+} */
+
+.shop_filtersBlock__zYWiU nav.is-active {
+    opacity: 1;
+}
+
+.searchFormShopInner section{
+    margin-top: 50px;
+    margin-left: 0% !important;
+}
+
+.shopContainer {
+    display: grid;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 120px;
+    min-height: 500px;
+    grid-auto-flow: column;
+    grid-template-columns: 30% 70%;
+}
+
+.allCategory {
+    /* position: absolute; */
+    /* top: -30px; */
+    font-family: '__Inter_aaf875', '__Inter_Fallback_aaf875';
+    font-style: normal;
+    margin-bottom: 20px;
+}
+
+.searchFormShop {
+    margin-top: 20px;
+}
+
+.shopBlock {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    margin-left: 5%;
+    row-gap: 2svw;
+    column-gap: 2svw;
+    align-items: flex-start;
+    justify-items: flex-start;
+    transition: all .3s;
+    height: max-content;
+}
+.shopBlock > div[role="navbar"] {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        width: 49%;
+        display: grid;
+        grid-auto-flow: column;
+        margin: auto;
+        column-gap: 1%;
+}
+
+.shopBlock > div[role="navbar"] button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    background: var(--orange,#ffca18);
+    border: #f0f;
+    margin-right: 9px;
+    padding: 10px 10px;
+    font-size: 1vw;
+    font-weight: 600;
+    transition: all .4s;
+    cursor: pointer;
+    width: 100%;
+    transition: all .3s;
+}
+
+.shopBlock > div[role="navbar"] button.activePagination {
+    color: #FFF;
+}
+
+.seacrhFormShop {
+    margin-top: 20px !important;
+}
+
+@keyframes opacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.shopBlock .productCard {
+    width: 90%;
+}
+.shopBlock .productCard:first-child, .shopBlock .productCard:nth-child(3n + 1) {
+    margin-left: 0;
+}
+.shopBlock .productCard:nth-child(n + 4) {
+    margin-top: 2%;
+}
+.filtersBlock * {
+    font-family: 'Inter';
+}
+.childCategories {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow-x: visible;
+    overflow-y: hidden;
+    transition: all 1s;
+    height: 100%;
+    transition: all 1s;
+}
+.filterItem {
+    display: flex;
+    flex-direction: column;
+    transition: all 1s;
+    cursor: pointer;
+}
+@keyframes opened {
+    0% {height: 0px;}
+    100% {height: 20px;}
+}
+@keyframes closed {
+    0% {height: 20px;}
+    100% {height: 0px;}
+}
+@keyframes fromLeft {
+    0% {transform: translateX(-50%);}
+    100% {transform: translateX(0);}
+}
+@keyframes toLeft {
+    0% {transform: translateX(0%);}
+    100% {transform: translateX(-50%);}
+}
+.openedChild {
+    position: relative;
+    transition: all 1s;
+}
+.childCategories li {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    animation-name: opened, fromLeft;
+    animation-duration: 1s, 1s;
+}
+.hiddenChild {
+    animation-name: closed;
+    animation-duration: 1s, 1s;
+    height: 0px;
+    animation-iteration-count: 1, 1;
+}
+.hiddenChild li {
+    animation-name: closed, toLeft;
+    animation-duration: 1s, 1s;
+    height: 0px;
+    animation-iteration-count: 1, 1;
+}
+
+@media screen and (max-width: 900px) {
+
+    .shopBlock > div[role="navbar"] {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        width: 96%;
+        display: grid;
+        grid-auto-flow: column;
+        grid-column-gap: 1%;
+        column-gap: 1%;
+        margin: 40px 0 0;
+    }
+    .shopBlock > div[role="navbar"] button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 12px;
+        background: var(--orange,#ffca18);
+        border: #f0f;
+        margin-right: 9px;
+        padding: 10px;
+        font-size: 3vw;
+        font-weight: 600;
+        transition: all .4s;
+        cursor: pointer;
+        width: 100%;
+        transition: all .3s;
+    }
+}
+
+@media screen and (max-width: 798px) {
+
+    .productCardTitle {
+        font-size: 1.3vw;
+        margin-bottom: 20px;
+        min-height: 38%;
+        max-height: 25%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+    .shopBlock > div[role="navbar"] {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        width: 96%;
+        display: grid;
+        grid-auto-flow: column;
+        grid-column-gap: 1%;
+        column-gap: 1%;
+        margin: 40px 0 0;
+    }
+
+}
+
+@media screen and (max-width: 498px) {
+
+    .allCategory {
+      display: none !important;
+    }
+    .productCardQuntity {
+        max-height: 100px;
+        grid-template-columns: 20% 60% 20%;
+        grid-template-rows: 100%;
+        border-radius: 30px;
+        border: 1px solid rgba(0,0,0,.4);
+        padding-left: 9%;
+        padding-right: 9%;
+        margin-left: auto;
+    }
+    .productContainer .upBlock{
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        margin-bottom: 20px;
+        flex-direction: column;
+    }
+    .upBlock h2, .upBlock strong {
+        font-size: 5vw;
+        font-weight: 800;
+    }
+    .shopContainer {
+        display: grid;
+        width: 100%;
+        margin-top: 50px;
+        margin-bottom: 120px;
+        min-height: 500px;
+        grid-auto-flow: row;
+        grid-template-columns: 100%;
+    }
+    .productCardQuntity {
+        position: relative;
+        height: 91%;
+        width: 100%;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+    }
+    .shopBlock {
+        display: grid;
+        grid-template-columns: 48% 48% !important;
+        width: 100%;
+        margin-left: 0;
+        grid-row-gap: 2svw;
+        row-gap: 0;
+        grid-column-gap: 2svw;
+        column-gap: 4%;
+        align-items: flex-start;
+        justify-items: flex-start;
+        transition: all .3s;
+        height: max-content;
+        grid-auto-flow: row !important;
+    }
+    .shopBlock .productCard {
+        position: relative;
+        width: 96%;
+        height: max-content;
+        background-color: #fff;
+        padding: 11% 2%;
+        border-radius: 27px;
+        cursor: pointer;
+        transition: all .3s ease-in;
+        overflow: hidden;
+    }
+    .productContainer .productCard {
+        position: relative;
+        width: 100%;
+        height: max-content;
+        background-color: #fff;
+        padding: 11% 2%;
+        border-radius: 27px;
+        cursor: pointer;
+        overflow: hidden;
+        transition: all .3s ease-in;
+        grid-template-rows: 33svh 5.1svh !important;
+    }
+    .productContainer .downBlock {
+        display: grid;
+        grid-auto-columns: clamp(179px,55.7svw,550px);
+        overflow-x: scroll;
+        overflow-y: hidden;
+        scrollbar-width: thin;
+        grid-template-rows: 53svh;
+        grid-auto-rows: 1fr;
+        grid-auto-flow: column;
+        grid-column-gap: 2svw;
+        grid-column-gap: 9svw;
+        column-gap: 9svw;
+        padding-bottom: 10px;
+        min-height: max-content;    
+    }
+    .productCardButton {
+        position: relative;
+        width: 80%;
+        min-height: 30%;
+        height: 100%;
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: all .3s;
+        z-index: 9999;
+    }
+    @keyframes opacity {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+    }
+    .shopBlock .productCard:nth-child(n + 3) {
+        margin-top: 20px;
+    }
+    .productCardQuntity p {
+        width: 30%;
+        border: none;
+        font-size: 4.1vw;
+        height: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .filtersContainer {
+        width: 100% !important;
+        margin-bottom: 60px;
+        margin-left: 0;
+    }
+    .filtersContainer > * {
+        min-width: 92vw;
+    }
+    .filtersContainer select {
+        border-radius: 160px;
+        background: var(--orange, #FFCA18);
+        border: none;
+        font-size: 3.9vw;
+        display: flex;
+        justify-self: center;
+        align-items: center;
+        text-align: center;
+        padding: 10px 5%;
+        height: 100%;
+        max-width: 100%;
+        font-weight: 600;
+        cursor: pointer;
+        align-self: center;
+        margin-left: auto;
+        margin-right: auto;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        min-width: 87svw;
+    }
+    .filtersContainer nav h3 {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: 84svw;
+            margin-left: auto;
+            margin-right: auto;
+    }
+    .upBlock .right {
+        min-width: 28%;
+        margin-left: 0;
+        font-size: 3vw;
+        width: 85%;
+    }
+    .productCard {
+        position: relative;
+        width: 100%;
+        height: max-content;
+        background-color: #fff;
+        padding: 1%;
+        border-radius: 27px;
+        cursor: pointer;
+        transition: all .3s ease-in;
+        grid-template-rows: 31svh 5svh;
+    }
+    .productCard .stock p {
+        font-size: 3.2vw;
+    }
+    .productCardTitle {
+        font-size: 3.1vw;
+        margin-bottom: 0;
+        min-height: 100%;
+        max-height: 100%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+    .addToCartButton {
+        border-radius: 160px;
+        border: none;
+        font-size: 2.5vw;
+        display: flex;
+        justify-self: center;
+        align-items: center;
+        padding: 0 4%;
+        height: 100%;
+        max-width: 100%;
+        cursor: pointer;
+        width: 76%;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+    }
+    .buttonToShop {
+        text-decoration: none;
+        padding: 5%;
+        font-weight: 600;
+        width: 30vw;
+        min-width: 150px;
+        max-width: 300px;
+        text-align: center;
+        border-radius: 27px;
+        background: var(--orange,#ffca18);
+        color: #000;
+        transition: all .3s;
+        margin: 29px auto 29px;
+        font-size: 3.4vw;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .upBlock h2, .upBlock strong {
+        font-size: 40px;
+        font-weight: 800;
+    }
+    .upBlock .right {
+        font-size: 16px;
+    }
+    .productCard {
+        height: 400px;
+    }
+    .productCardTitle {
+        font-size: 16px;
+    }
+    .addToCartButton, .productCardQuntity p {
+        font-size: 16px;
+    }
+    .productCard .stock p {
+        font-size: 16px;
+    }
+}
+

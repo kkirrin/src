@@ -1,0 +1,110 @@
+.searchContainer {
+    position: relative;
+    margin-left: 2%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 30%;
+    min-width: 200px;
+}
+.searchForm {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.searchForm input{
+    font-size: 1vw;
+    height: 50%;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin: auto;
+    border: none;
+    border-radius: 27px;
+    padding-left: 15%;
+    width: 100%;
+}
+.searchIcon {
+    position: absolute;
+    width: 5%;
+    height: 40px;
+    left: 4%;
+}
+.searchResultsContainer {
+    position: absolute;
+    animation: opacity 1s 1;
+    top: 67px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 27px;
+    z-index: 9999999;
+}
+.resultItem {
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: 0.7vw;
+    color: #333;
+    text-decoration: none;
+    flex-direction: row;
+}
+.resultItem:not(:first-child) {
+    margin-top: 10px;
+}
+
+@keyframes opacity {
+    0% { opacity: 0 }
+    100% { opacity: 1}
+}
+
+@media screen and (max-width: 940px) {
+    .searchContainer {
+        margin-right: 9px;
+    }
+}
+@media screen and (max-width: 498px) {
+    .searchForm input {
+        font-size: 4vw;
+        height: 50%;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        margin: auto;
+        border: none;
+        border-radius: 27px;
+        padding-left: 18%;
+        width: 100%;
+    }
+    .searchIcon {
+        position: absolute;
+        width: 11%;
+        height: 40px;
+        left: 4%;
+    }
+    .searchResultsContainer {
+        position: fixed;
+        animation: search_opacity__fa4DG 1s 1;
+        top: 90px;
+        padding: 5vw;
+        background-color: #fff;
+        border-radius: 27px;
+        z-index: 9999999;
+        width: 87vw;
+        left: 0;
+    }
+    .resultItem {
+        display: flex;
+        flex-wrap: nowrap;
+        font-size: 3.4vw;
+        color: #333;
+        text-decoration: none;
+        flex-direction: row;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .searchForm input{
+        padding-left: 45px;
+      font-size: 18px;
+    }
+  }

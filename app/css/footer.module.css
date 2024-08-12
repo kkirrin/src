@@ -1,0 +1,117 @@
+.footerContainer {
+  position: relative;
+  border-radius: 30px;
+  background: #2C2C2C;
+  bottom: 0;
+  align-self: flex-end;
+  height: 215px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footerContainer * {
+  color :#fff;
+}
+.footerLeftComponent > a {
+  text-decoration: none;
+}
+.footerCenterBlock {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 55%;
+  height: 90%;
+}
+.footerRightComponent {
+  position: relative;
+  width: 250px;
+  margin-right: 20px;
+  height: 100%;
+}
+.footerRightComponent img {
+  object-fit: contain;
+}
+.footerLeftComponent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 80%;
+}
+.footerDawnLeftBlock {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.footerDawnLeftBlock p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.footerLeftComponent > *:first-child {
+  font-weight: 600;
+  font-size: 2.2vw;
+}
+.footerLeftComponent > *:nth-child(3) {
+
+}
+.leftContacts * {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.3vw;
+  text-decoration: none;
+  min-width: max-content;
+}
+.footerDawnLeftBlock > * {
+  min-width: max-content;
+  font-size: 8px;
+}
+.leftContacts > *:nth-child(2) {
+  margin-top: 5px;
+}
+.footerDawnLeftBlock > *:last-child {
+  margin-left: 10px;
+}
+@media screen and (max-width: 498px) {
+  .footerCenterBlock {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      width: 55%;
+      height: 90%;
+  }
+  .footerRightComponent {
+    position: relative;
+    width: 250px;
+    margin-right: 0;
+    height: 100%;
+  }
+  .footerLeftComponent > * {
+    text-align: center;
+  }
+  .footerLeftComponent > *:first-child {
+    font-weight: 600;
+    font-size: 4.2vw;
+  }
+  .leftContacts * {
+    display: flex;
+    flex-direction: column;
+    font-size: 2.6vw;
+    text-decoration: none;
+    min-width: max-content;
+}
+}
+
+@media screen and (min-width: 1500px) {
+  .leftContacts * {
+    font-size: 17px;
+  }
+  .footerLeftComponent > *:first-child {
+    font-size: 30px;
+  }
+  .footerDawnLeftBlock > * {
+    font-size: 13px;
+  }
+}

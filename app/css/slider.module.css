@@ -1,0 +1,101 @@
+.sliderContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: relative;
+    overflow: hidden;
+    margin-top: 25px;
+    margin-bottom: 72px;
+    height: 50vw;
+    max-height: 768px;
+    border-radius: 30px;
+    background: linear-gradient(142deg, rgba(0, 0, 0, 0.39) 0%, rgba(0, 0, 0, 0.00) 100%), lightgray -2.779px -40.945px / 100.373% 130.723% no-repeat;
+}
+.sliderItem {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-width: 100%;
+    transition: all 1s;
+}
+.sliderItem > *:not(.sliderBg) {
+    position: relative;
+    z-index: 3;
+}
+.sliderBg img {
+    filter: brightness(40%);
+    object-fit: cover;
+}
+.sliderItem p, .sliderItem h2 {
+    color: #fff;
+}
+.sliderItem h2 {
+    font-size: 4vw;
+    font-weight: bold;
+}
+.sliderItem p {
+    font-size: 1.3vw;
+    font-weight: thin;
+}
+.textSlider {
+    margin-left: 5%;
+    margin-top: 10%;
+    width: 65%;
+}
+
+@media screen and (max-width: 498px) {
+    .sliderContainer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        position: relative;
+        overflow: hidden;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        height: 84vh;
+        max-height: 768px;
+        border-radius: 30px;
+        background: linear-gradient(142deg, rgba(0, 0, 0, 0.39) 0%, rgba(0, 0, 0, 0.00) 100%), lightgray -2.779px -40.945px / 100.373% 130.723% no-repeat;
+    }
+    .sliderItem {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 100%;
+        transition: all 1s;
+    }
+    .textSlider {
+        margin-left: 5%;
+        margin-top: 10%;
+        width: 91%;
+    }
+    .sliderItem h2 {
+        font-size: 4.2vw;
+        font-weight: 700;
+        text-align: center;    
+    }
+    .sliderItem p {
+        font-size: 3.8vw;
+        font-weight: thin;
+        text-align: center;
+        margin-top: 20px;    
+    }
+    .sliderBg img {
+        filter: brightness(40%);
+        object-fit: cover;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .sliderItem h2 {
+        font-size: 61px;
+        font-weight: bold;
+        line-height: 61px;
+        margin-bottom: 20px;
+    }
+    .sliderItem p {
+        font-size: 20px;
+        font-weight: thin;
+    }
+}
