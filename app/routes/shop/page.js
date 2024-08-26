@@ -39,9 +39,11 @@ export default function Page({}) {
 
       try {
 
-        const {data, meta} = await getProducts(categoryFilter, pageNumber, 9)
+        const { data, meta } = await getProducts(categoryFilter, pageNumber, 9)
+        
         console.log(categoryFilter)
         setProducts(await data)
+        console.log(`DATAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA:${data}`)
         setMeta(meta)
 
       } catch (error) {
@@ -63,6 +65,7 @@ export default function Page({}) {
 
   useEffect(() => { },[products])
 
+  console.log(`PRODUCTS AAAAAAAAAAAAAAAAAAA:${products}`)
 
   const handleCategoryClick = () => {
     setCategoryShow(!categoryShow);

@@ -35,6 +35,8 @@ export const ProductCard = ({product = {
 
     }
 
+    console.log(`КАКОЙ_ТО ТОВАР: `)
+    const img = product?.attributes?.imgs?.data?.[0]?.attributes ? product.attributes.imgs.data[0].attributes : ''
     return(
         <Suspense fallback={<div>Загрузка...</div>}>
 
@@ -44,11 +46,20 @@ export const ProductCard = ({product = {
                 <div className = {`${styles.productCardImage}`}>
                     
                      {
-                        (typeof product.image != "undefined") ? 
-                            <Image  unoptimized src= {`https://${process.env.NEXT_PUBLIC_URL_API}${product.image[0]}`} alt = {product.attributes.title} fill />
-                                                              :
-                            <Image  unoptimized src= {`https://${process.env.NEXT_PUBLIC_URL_API}/testProduct.png`} alt = {product.attributes.title} fill />                         
-                     }
+                    (product.attributes?.imgs?.data?.[0]?.attributes?.url == null || product.attributes.imgs.data[0].attributes.url === 0) ? 
+                      <Image 
+                          unoptimized
+                          src={`https://${process.env.NEXT_PUBLIC_URL_API}/testProduct.png`} // URL по умолчанию
+                          alt={product.title}
+                          fill
+                      /> :
+                      <Image 
+                          unoptimized
+                          src={`https://${process.env.NEXT_PUBLIC_URL_API}${product.attributes.imgs.data[0].attributes.url}`} // Использование URL из атрибутов
+                          alt={product.title}
+                          fill
+                      />
+              }
                    
                 </div>
 

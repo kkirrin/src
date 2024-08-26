@@ -63,7 +63,7 @@
   width: max-content;
   margin-left: 2%;
   margin-right: 5%;
-  font-size: 1vw;
+  font-size: clamp(1rem, 0.911rem + 0.238vw, 1.125rem);
 }
 .nav * {
   color: #fff;

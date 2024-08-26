@@ -97,7 +97,7 @@
     align-items: center;
     min-width: 100%;
     max-width: 556px;
-    height: 25vw;
+    height: auto;
     background-color: #fff;
     padding: 8% 1%;
     border-radius: 27px;
@@ -675,6 +675,15 @@
     }
 }
 
+@media screen and (min-width: 2560px) {
+    .productCard {
+        grid-template-rows: 20svh 5svh;
+    }
+    .productCartLink {
+        grid-template-rows: 30% 20% 10% 8%;
+    }
+}
+
 @media screen and (min-width: 1500px) {
     .upBlock h2, .upBlock strong {
         font-size: 40px;
@@ -683,9 +692,9 @@
     .upBlock .right {
         font-size: 16px;
     }
-    .productCard {
+    /* .productCard {
         height: 400px;
-    }
+    } */
     .productCardTitle {
         font-size: 16px;
     }

@@ -23,7 +23,7 @@ export const SearchForm = ({}) => {
     const [loading, setLoading] = useState(false) //пока на будущее
 
     const {getSearch} = useGetSearch();
-    const cleanedText = text.replace(/[,.?!;:]/g, '');
+    const cleanedText = text.replace(/[,/.?!;:/]/g, '');
     
     const setVisible = (visible) => {
       if( !visible ) {
@@ -33,35 +33,55 @@ export const SearchForm = ({}) => {
     }
     const timeoutIdRef = useRef(null);
 
+    //  Обновляем getResults, чтобы он вызывался при изменении cleanedText
+    useEffect(() => {
+        if (cleanedText.length > 1 && results.length === 0) {
+            cleanedText.slice(0, -1)
+            getResults();
+        }
+    }, [cleanedText, results]); 
+
     async function getResults() {
-        if(cleanedText.length < 1) {
-            setResults([]);
-            return;
+        if (cleanedText.length < 1) {
+          setResults([]);
+          return;
         }
         if(cleanedText.length === 0) {
           setResults([]);
           return;
         }
-       
-        
-            // Начальное значение состояния results
-            let tempresults = [];
-            
-            const {data, textFromBack, url, complateString} = await getSearch(cleanedText, 0)
-            console.log(data, complateString)
+       try {
 
-            debugger
-            
-            console.log(`Данные: ${data}`)
-            console.log(`Данные пришли с текстом: ${textFromBack}`)
-            console.log(`Данные пришли с url: ${url}`)
-            console.log(`Длина complateString: ${complateString}`)
-            
-            setResults(await data.data)
-            console.log(data.data)
+         const result = await getSearch(cleanedText, 0)
+         const { data, textFromBack, url, complateString } = result;
 
+         console.log(cleanedText.length)
+         if (data.length === 0 && cleanedText.length > 1) {
+            const newCleanedText = cleanedText.slice(0, -1);
+            setText(newCleanedText); 
+            console.log(newCleanedText)
             debugger
-       
+          }
+
+        if (data.length === 0) {
+            setResults([]);
+            return; 
+        }
+         debugger
+         
+         console.log(`Данные: ${data}`)
+         console.log(`Данные пришли с текстом: ${textFromBack}`)
+         console.log(`Данные пришли с url: ${url}`)
+         console.log(`Длина complateString: ${complateString}`)
+         
+         setResults(await data.data)
+         console.log(data.data)
+
+         debugger
+
+       } catch {
+         console.error("Ошибка при получении результатов поиска");
+       }
     }
 
     async function goToResult() {

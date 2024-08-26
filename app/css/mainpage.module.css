@@ -223,7 +223,7 @@
 }
 
 .partnersImages {
-    width: 120px !important;
+    width: 120px;
     object-fit: contain;
     transition: all 0.5 ease-in-out;
     
@@ -240,7 +240,7 @@
         
     }
     .partnersImages {
-        width: 70px !important;
+        width: 70px;
         object-fit: contain;
     }
     .imageItem {

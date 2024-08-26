@@ -66,7 +66,11 @@ export default function Home({ params, searchParams }) {
         setTextToCart('Добавить еще?');
     }, 1000);
 
-}
+  }
+  
+    console.log(`PRODUCTS AAAAAAAAAAAAAAAAAAA:`, product)
+    // const img = product?.attributes?.imgs?.data[0]?.attributes?.url
+
 
   return (
     <>
@@ -79,13 +83,22 @@ export default function Home({ params, searchParams }) {
         {product ? (
           <section className={productStyles.singleProduct}>
             <article className={`${productStyles.imageBlock}`}>
-                <div className={`${productStyles.singleProductImg}`}>
-                     {
-                        (typeof product.image != "undefined") ? 
-                            <Image  unoptimized src= {`https://${process.env.NEXT_PUBLIC_URL_API}${product.image[0]}`} alt = {product.title} fill />
-                                                              :
-                            <Image  unoptimized src= {`https://${process.env.NEXT_PUBLIC_URL_API}/testProduct.png`} alt = {product.title} fill />                         
-                     }
+              <div className={`${productStyles.singleProductImg}`}>
+                {
+                    (product.attributes?.imgs?.data?.[0]?.attributes?.url == null || product.attributes.imgs.data[0].attributes.url === 0) ? 
+                      <Image 
+                          unoptimized
+                          src={`https://${process.env.NEXT_PUBLIC_URL_API}/testProduct.png`} // URL по умолчанию
+                          alt={product.title}
+                          fill
+                      /> :
+                      <Image 
+                          unoptimized
+                          src={`https://${process.env.NEXT_PUBLIC_URL_API}${product.attributes.imgs.data[0].attributes.url}`} // Использование URL из атрибутов
+                          alt={product.title}
+                          fill
+                      />
+              }
                 </div>
             </article>
             <article className={`${productStyles.infoBlock}`}>
