@@ -70,7 +70,8 @@ export default function Home({ params, searchParams }) {
   
     console.log(`PRODUCTS AAAAAAAAAAAAAAAAAAA:`, product)
     // const img = product?.attributes?.imgs?.data[0]?.attributes?.url
-
+    const desc = product?.attributes?.description ? product?.attributes?.description : ''
+    console.log(desc)
 
   return (
     <>
@@ -129,7 +130,7 @@ export default function Home({ params, searchParams }) {
               <div className={`${productStyles.attrBlock}`}>
                 <h3 className={`${productStyles.attrHeader}`}>Характеристики</h3>
                 <div className={`${productStyles.attrList}`}>
-                  {
+                  {/* {
                     (product.attributes.Attributes) ? 
                         Object.entries(product.attributes.Attributes).map(([key, value], index) => {
                           return (
@@ -142,7 +143,9 @@ export default function Home({ params, searchParams }) {
                         })
                         : 
                     null
-                  }
+                  } */}
+
+                  {desc}
                 </div>
               </div>
               <div className={`${productStyles.termsBlock}`}>

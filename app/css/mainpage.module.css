@@ -228,6 +228,15 @@
     transition: all 0.5 ease-in-out;
     
 }
+
+@media screen and (max-width: 769px) {
+    .partnersContainer {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 @media screen and (max-width: 498px) {
 
     .imagesPageContainer {
@@ -240,7 +249,7 @@
         
     }
     .partnersImages {
-        width: 70px;
+        width: 60px;
         object-fit: contain;
     }
     .imageItem {

@@ -17,7 +17,7 @@ export const SearchForm = ({}) => {
     const [results, setResults] = useState([]);
     console.log(text)
 
-    debugger
+    
 
     const products = useStater('products')
     const [loading, setLoading] = useState(false) //пока на будущее
@@ -60,14 +60,14 @@ export const SearchForm = ({}) => {
             const newCleanedText = cleanedText.slice(0, -1);
             setText(newCleanedText); 
             console.log(newCleanedText)
-            debugger
+            
           }
 
         if (data.length === 0) {
             setResults([]);
             return; 
         }
-         debugger
+         
          
          console.log(`Данные: ${data}`)
          console.log(`Данные пришли с текстом: ${textFromBack}`)
@@ -77,7 +77,7 @@ export const SearchForm = ({}) => {
          setResults(await data.data)
          console.log(data.data)
 
-         debugger
+         
 
        } catch {
          console.error("Ошибка при получении результатов поиска");
@@ -89,11 +89,11 @@ export const SearchForm = ({}) => {
             setResults([]);
             console.log(results)
 
-            debugger
+            
         
             setText('');
             console.log(setText)
-            debugger
+            
         })
     }
 
@@ -101,7 +101,7 @@ export const SearchForm = ({}) => {
         console.log("ЗДОРОВААА")
         console.log(`Results: ${results}`)
         console.log(results)
-        debugger
+        
     },[results])
 
     useEffect(() => {
